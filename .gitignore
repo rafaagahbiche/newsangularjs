@@ -1,5 +1,5 @@
 dist/
-node_module/
+node_modules/
 src/assets/
 src/services/services.config.js
 *.png
