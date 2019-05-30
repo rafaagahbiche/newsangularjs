@@ -1,0 +1,245 @@
+/*
+* @subsection   Easy Responsive Tabs
+*
+* @description  Describes style declarations for Easy Responsive Tabs extension
+*
+* @author       Samson Onna
+* @link         samson3d@gmail.com
+* @version      1.0.0
+*/
+
+$tabs-btn-height: 40px;
+$tabs-btn-indent: 0;
+
+$tabs-btn-color: #333;
+$tabs-btn-background: #DDD;
+
+$tabs-btn-active-color: #333;
+$tabs-btn-active-background: #FFF;
+
+$tabs-btn-border-radius: 4px;
+$tabs-btn-border: 1px solid #CCC;
+
+$tabs-btn-padding: 10px 20px;
+
+$tab-padding: 20px;
+
+.resp-tabs-list {
+  li {
+    cursor: pointer;
+    font-family: "Noto Sans";
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 15px;
+    position: relative;
+
+    &:after{
+      content: '';
+      position: absolute;
+      left: 50%;
+      right: 50%;
+      content: "";
+      height: 3px;
+      bottom: -3px;
+      background: #02AFFF;
+      -webkit-transition: all 200ms ease-out;
+      transition: all 200ms ease-out;
+      opacity: 0;
+    }
+
+    &:hover {
+      &:after {
+        left: 0;
+        right: 0;
+        width: auto;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.resp-accordion {
+  display: none;
+  padding: 10px;
+  border-bottom: 2px solid $gray-light;
+  cursor: pointer;
+
+  &.resp-tab-active{
+
+  }
+}
+
+.resp-tab-content {
+  display: none;
+}
+
+.resp-tab-content-active {
+  display: block;
+}
+
+.responsive-tabs-default {
+  .resp-tabs-list {
+    display: none;
+    word-spacing: $tabs-btn-indent - 4px;
+    margin-bottom: -1px;
+  }
+
+  .resp-accordion, .resp-tabs-list > li {
+    display: inline-block;
+    word-spacing: normal;
+    padding: $tabs-btn-padding;
+    background: $tabs-btn-background;
+    border: $tabs-btn-border;
+    border-top-left-radius: $tabs-btn-border-radius;
+    border-top-right-radius: $tabs-btn-border-radius;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s all ease;
+
+    &:hover, &.resp-tab-active {
+      color: $tabs-btn-active-color;
+      background: $tabs-btn-active-background;
+    }
+
+    &.resp-tab-active {
+      border-bottom-color: transparent;
+    }
+  }
+
+  .resp-accordion {
+    display: block;
+    border-radius: 0;
+  }
+
+  .resp-tab-content {
+    display: none;
+    padding: $tab-padding;
+    background: $tabs-btn-background;
+    border: $tabs-btn-border;
+    color: $tabs-btn-active-color;
+    background: $tabs-btn-active-background;
+  }
+}
+
+.responsive-tabs {
+  overflow: hidden;
+  position: relative;
+
+  .heading-divider {
+    margin-top: 30px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .heading-divider{
+      margin-top: 10px;
+    }
+  }
+
+  .resp-tabs-list {
+    display: none;
+
+    > li {
+      position: relative;
+      display: inline-block;
+
+      &.resp-tab-active {
+        border-bottom: 3px solid $brand-primary;
+        font-style: italic;
+
+        > .btn {
+          border-bottom-color: transparent;
+
+          &:hover {
+            color: inherit;
+            background: transparent;
+          }
+        }
+      }
+
+      > .btn {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        transition: none;
+
+        &:hover {
+          transition: .3s all ease;
+        }
+      }
+    }
+  }
+
+  .resp-accordion, .resp-tabs-list > li {
+    &:hover, &.resp-tab-active {
+
+    }
+
+    &.resp-tab-active {
+    }
+
+    & + .resp-tab-content{
+      padding-top: 16px;
+
+      @media (min-width: 768px) {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .btn-default {
+    color: $white;
+    &:hover {
+      color: $gray-dark;
+    }
+  }
+
+  .resp-accordion {
+    display: block;
+
+    &.resp-tab-active {
+      .btn-default {
+        background: #ebebeb;
+        color: $gray-dark;
+      }
+    }
+
+    > .btn {
+      display: block;
+    }
+  }
+
+  .resp-tab-content {
+    display: none;
+  }
+
+  .resp-tab-content + .resp-accordion {
+    margin-top: 10px;
+  }
+}
+
+.responsive-tabs:not(.resp-easy-accordion) {
+  @media (min-width: 768px) {
+    .resp-accordion {
+      position: absolute;
+      top: 16px;
+      right: 0;
+      display: none;
+    }
+
+    .resp-tabs-list {
+      position: static;
+      display: block;
+      margin-top: 14px;
+      @media (min-width: 1800px) {
+        margin-top: 10px;
+      }
+
+      @media (min-width: 1800px) {
+        position: absolute;
+        right: 0;
+        top: 10px;
+        margin-top: 0;
+      }
+    }
+  }
+}

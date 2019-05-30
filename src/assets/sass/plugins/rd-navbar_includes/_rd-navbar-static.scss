@@ -1,0 +1,141 @@
+/*
+* Static Layout
+*/
+
+$navbar-static-nav-color: $navbar-nav-color;
+$navbar-static-nav-background: $navbar-nav-background;
+$navbar-static-nav-hover-color: $navbar-nav-hover-color;
+$navbar-static-nav-hover-background: $navbar-nav-hover-background;
+$navbar-static-nav-active-color: $navbar-nav-active-color;
+$navbar-static-nav-active-background: $navbar-nav-active-background;
+
+.rd-navbar-static {
+  display: block;
+
+  // Centered navbar variant
+  &.rd-navbar-centered {
+
+    .rd-navbar-panel {
+      text-align: center;
+      .rd-navbar-social-list {
+        position: absolute;
+        right: 30px;
+        top: 125px;
+        z-index:10;
+
+      }
+    }
+
+    .rd-navbar-nav-wrap {
+      @include justify-content(center);
+    }
+  }
+
+  // Inline navbar
+  &.rd-navbar-inline{
+     .rd-navbar-nav > li > a {
+       padding: 25px 9px 26px;
+       font-size: 14px;
+     }
+
+    .rd-navbar-nav-wrap{
+      @include flex-direction(row);
+    }
+
+    .rd-navbar-nav{
+      margin-top: 19px;
+    }
+
+    .rd-navbar-brand{
+      margin-top: -19px;
+    }
+
+    &.rd-navbar--is-stuck{
+      .rd-navbar-brand{
+        display: none;
+      }
+      .rd-navbar-nav {
+        margin-top: 0;
+      }
+    }
+
+    .rd-navbar-social-list{
+      @include align-self(flex-end);
+      padding-bottom: 10px;
+    }
+
+    @media (min-width: $screen-xl-min) {
+      .rd-navbar-nav > li > a {
+        padding: 25px 17px 26px;
+        font-size: 16px;
+      }
+
+      .rd-navbar-social-list {
+        @include align-self(center);
+        padding: 0;
+      }
+    }
+  }
+
+  //.rd-navbar-default
+  .rd-navbar-nav-wrap{
+    @include display-flex();
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include flex-direction(row-reverse)
+  }
+
+  .rd-navbar-panel {
+    border-bottom: 1px solid $gray-light;
+  }
+
+  .rd-navbar-top-part{
+    padding-top: 35px;
+    padding-bottom: 1px;
+  }
+
+  .rd-navbar-panel {
+    text-align: left;
+    padding-top: 15px;
+    padding-bottom: 33px;
+  }
+
+  .rd-navbar-panel-canvas{
+    position: fixed;
+    height: 56px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: $white;
+    z-index: 16;
+  }
+
+  .rd-navbar-toggle{
+    position: fixed;
+    z-index: 17;
+    top: 4px;
+    left: 4px;
+  }
+
+  .rd-navbar-nav-wrap {
+    width: 100%;
+  }
+
+  // RD Navbar States
+  .rd-navbar-static--visible{
+    display: block;
+  }
+
+  .rd-navbar-static--hidden{
+    display: none;
+  }
+
+  // RD Navbar Stuck
+  &.rd-navbar--is-stuck,
+  &.rd-navbar--is-clone {
+    .rd-navbar-nav > li > a {
+      padding: 22px 17px 22px;
+    }
+  }
+}
+

@@ -1,0 +1,43 @@
+<div class="cell-sm-10 cell-md-6">
+    <div class="post-inner">
+        <img class="img-responsive post-image reveal-inline-block" src="{{block.blocknews.urlToImage}}" height="411" width="536"
+            alt="">
+        <div class="post-caption post-caption-lg">
+            <ul>
+                <li><a href="{{block.blocknews.source.url}}"><span class="label label-warning">{{block.source.name}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="cell-sm-10 cell-md-6 offset-top-36 offset-md-top-0">
+    <div class="h4 text-normal font-accent-2 offset-top-0">
+        <a class="post-link" href="post-default.html">{{block.blocknews.title}}</a>
+    </div>
+    <div class="post-meta element-groups-custom offset-top-12">
+        <a class="post-meta-author" href="categories-list.html">{{block.blocknews.author}}</a>
+        <a class="post-meta-time" href="politics.html">
+            <time datetime="2016-06-06">{{block.blocknews.publishedAt | date : 'MMM dd, HH:mm'}}</time>
+        </a>
+       
+    </div>
+    <p>{{block.blocknews.description}}</p>
+    <div class="reveal-xs-flex range-xs-middle range-xs-justify offset-top-25">
+            <a class="btn btn-warning" href="{{block.blocknews.url}}" target="_blank">Read more</a>
+            <div class="veil reveal-xs-block">
+                <div class="post-meta post-meta-hidden-outer">
+                    <div class="post-meta-hidden">
+                        <div class="icon text-gray icon-lg material-icons-share">
+                            <ul>
+                                <li><a class="icon fa fa-facebook" href="#"></a></li>
+                                <li><a class="icon fa fa-twitter" href="#"></a></li>
+                                <li><a class="icon fa fa-google-plus" href="#"></a></li>
+                                <li><a class="icon fa fa-linkedin" href="#"></a></li>
+                                <li><a class="icon fa fa-pinterest" href="#"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

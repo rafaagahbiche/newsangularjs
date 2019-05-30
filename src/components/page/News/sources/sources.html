@@ -1,0 +1,13 @@
+<div ng-if="sources.newsSources.length > 0" class="heading-divider">
+    <h3 class="heading-italic text-light">Sources</h3>
+</div>
+<div class="instafeed sidebar-gallery" data-lightgallery="group" data-lg-thumbnail="false">
+        <div class="range range-ten">
+            <div ng-repeat="source in sources.newsSources" class="cell-xs-5 cell-lg-2">
+                <a class="thumbnail-variant-1" href="{{source.url}}" target="_blank" data-lightgallery="item">
+                    <!-- <span>{{source.name}}</span> -->
+                    <img src="https://icon-locator.herokuapp.com/icon?url={{source.url}}&size=70..120..200" alt="" width="100" height="100">
+                </a>
+        </div>
+    </div>
+</div>

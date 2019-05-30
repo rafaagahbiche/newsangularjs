@@ -1,0 +1,110 @@
+//
+// Scaffolding custom
+// --------------------------------------------------
+
+// Body reset
+// -------------------------
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased
+}
+
+.page {
+  overflow: hidden;
+}
+
+p {
+  font-weight: $font-weight-base;
+}
+
+img {
+  max-width: 100%;
+  display: inline-block;
+  height: auto;
+}
+
+audio {
+  width: 100%;
+}
+
+// Responsive images (ensure images don't scale beyond their parents)
+.page .img-100p {
+  max-width: 100%;
+}
+
+.max-width-none {
+  max-width: none;
+}
+
+.min-width-100p {
+  min-width: 100%;
+}
+
+// Brand
+// -------------------------
+
+.brand {
+  .brand-name {
+    font-family: 'Noto Serif', serif;
+    font-size: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    font-weight: 300;
+    font-style: italic;
+    color: #000;
+    letter-spacing: -0.08em;
+
+    span {
+      font-family: 'Noto Sans', serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+  }
+}
+
+// Twitter iframe
+// -------------------------
+
+.twitter-tweet {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+#twitter-widget-1 {
+  width:100%!important;
+  padding-bottom: 20px;
+}
+
+
+// Search page
+// -------------------------
+
+.search{
+  color: darken($brand-primary, 5%);
+}
+
+
+// Facebook iframe
+// -------------------------
+
+#fb-root,
+.fb-page-responsive {
+  text-align: center;
+}
+
+.fb-page-responsive,
+.fb-post {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+}
+
+// Page 404
+// -------------------------
+
+.page-404 {
+
+}

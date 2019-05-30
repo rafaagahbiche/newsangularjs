@@ -1,0 +1,44 @@
+<div class="heading-divider offset-top-45 offset-md-top-25">
+    <h2>{{inline.title}}</h2>
+</div>
+<div ng-repeat-start="item in inline.newslist" class="post post-variant-2">
+    <div class="unit unit-xl-horizontal text-sm-left unit-sm-horizontal unit-md-horizontal unit-lg-horizontal">
+        <div class="unit-left">
+            <div class="post-inner">
+                <div class="reveal-inline-block"><img class="post-image" src="{{item.urlToImage}}" width="150"
+                        height="115" alt=""></div>
+                <div class="post-caption">
+                    <ul>
+                        <li><a href="{{item.source.name}}" target="_blank"><span
+                                    class="label label-warning">{{item.source.name}}</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="unit-body">
+            <div class="h5 text-bold"><a class="post-link" target="_blank" href="{{item.url}}">{{item.title}}</a>
+            </div>
+            <p>{{item.description}}</p>
+            <div class="post-meta post-meta-hidden-outer">
+                <div class="post-meta-hidden">
+                    <div class="icon text-gray icon-lg material-icons-share">
+                        <ul>
+                            <li><a class="icon fa fa-facebook" href="#"></a></li>
+                            <li><a class="icon fa fa-twitter" href="#"></a></li>
+                            <li><a class="icon fa fa-google-plus" href="#"></a></li>
+                            <li><a class="icon fa fa-linkedin" href="#"></a></li>
+                            <li><a class="icon fa fa-pinterest" href="#"></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="element-groups-custom">
+                    <a ng-if="item.author !== null" class="post-meta-author" href="{{item.source.name}}">{{item.author}}</a>
+                    <a class="post-meta-time" href="{{item.url}}">
+                        <time datetime="2016-06-06">{{item.publishedAt | date : 'MMM dd, HH:mm'}}</time>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-repeat-end class="divider divider-dashed"></div>

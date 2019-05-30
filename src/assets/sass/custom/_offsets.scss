@@ -1,0 +1,119 @@
+//
+// Offsets
+// --------------------------------------------------
+
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+// Insets
+// -------------------------
+
+$insets: (0, 30px, 40px);
+
+@include indent-responsive(inset, left, padding-left, $medias, $insets);
+@include indent-responsive(inset, right, padding-right, $medias, $insets);
+
+//Inset in persent
+//
+$insets: (6%, 15%);
+@include indent-responsive(inset-p, left, padding-left, $medias, $insets);
+@include indent-responsive(inset-p, right, padding-right, $medias, $insets);
+
+// Elements
+// -------------------------
+
+h1 + *,
+h2 + * {
+  margin-top: 10px;
+}
+
+h3 + *,
+h4 + * {
+  margin-top: 17px;
+}
+
+h5 + *,
+h6 + * {
+  margin-top: 8px;
+}
+
+img + p {
+  margin-top: 23px;
+}
+
+p + img{
+  margin-top: 14px;
+}
+
+h6 + .list {
+  margin-top: 17px;
+}
+
+h3.heading-italic + p {
+  margin-top: 8px;
+}
+
+.heading-divider + h1,
+.heading-divider + .h1 {
+  margin-top: 22px;
+}
+
+.list-inline-0 + .divider{
+  margin-top: 30px;
+}
+
+.divider + h3{
+  margin-top: 20px;
+}
+
+// Grid
+// -------------------------
+
+// Sections
+// -------------------------
+
+// Responsive
+// -------------------------
+
+$offsets: (0, 5px, 12px, 15px, 20px, 25px, 30px, 36px, 45px, 60px);
+
+html .page {
+  @include indent-responsive(offset, top, margin-top, $medias, $offsets);
+
+  .offset-bottom-0 {
+    margin-bottom: 0 !important;
+  }
+
+  .offset-0 {
+    margin: 0 !important;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    .offset-sm-negative-left-23{
+      margin-left: -23px;
+    }
+    .offset-sm-negative-right-23{
+      margin-right: -23px;
+    }
+    .offset-sm-top-28{
+      margin-top: 28px;
+    }
+  }
+
+  @media (min-width: $screen-lg-min) {
+    .offset-lg-negative-right-26 {
+      margin-right: -26px;
+    }
+    .offset-lg-negative-right-38 {
+      margin-right: -38px;
+    }
+    .offset-lg-negative-left-26 {
+      margin-left: -26px;
+    }
+    .offset-lg-negative-left-14{
+      margin-left: -14px;
+    }
+    .offset-lg-negative-right-24{
+      margin-right: -24px;
+    }
+  }
+}

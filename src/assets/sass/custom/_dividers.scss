@@ -1,0 +1,47 @@
+//
+// Dividers
+// --------------------------------------------------
+
+.divider {
+  width: 100%;
+  height: 0;
+  border-top: 1px solid $gray-base;
+}
+
+// Divider-dashed
+//
+
+.divider-dashed {
+  border-top: 1px dotted #d2d1d1;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+// Divider-vertical
+//
+
+.divider-vertical {
+  display: inline-block;
+  border-top: none;
+  border-left: 1px solid $gray-light;
+  width: 1px;
+}
+
+// Dividers size
+//
+
+.divider-lg {
+  border-width: 3px;
+}
+
+.divider-offset-top-52 {
+  margin-top: 52px;
+}
+
+.divider-vertical {
+  &.divider-xs {
+    height: 30px;
+    margin-left: 30px;
+    margin-right: 29px;
+  }
+}

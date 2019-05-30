@@ -1,0 +1,17 @@
+.label {
+  text-transform: capitalize;
+  font-size: 100%;
+  font-family: "Noto Serif";
+  font-style: italic;
+  font-weight: 700;
+  border-radius: 0;
+  padding: 0 6px;
+  transition: 0.2s ease-in;
+
+  &-warning {
+    &:hover {
+      background: $gray-base;
+      color: $brand-warning;
+    }
+  }
+}

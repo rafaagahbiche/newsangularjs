@@ -1,0 +1,133 @@
+//
+// Icons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.icon {
+  display:inline-block;
+  text-align: center;
+  transition: .3s;
+
+  &:before {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &.icon-circle{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+}
+
+
+// Alternate icons
+// --------------------------------------------------
+
+.icon-default {
+  background-color: $white;
+  color: $gray;
+}
+
+.icon-gray-base{
+  background: $gray-base;
+  color: $white;
+}
+
+.icon-default,
+.icon-gray-base{
+  &:hover{
+    background-color: $brand-warning;
+    color: $gray-base ;
+  }
+}
+
+.icon-warning {
+  color: $brand-warning;
+}
+
+
+// Icon Styles
+// --------------------------------------------------
+
+.icon-circle{
+  border-radius: 50%;
+}
+
+
+// Icon Sizes
+// --------------------------------------------------
+
+.icon-xs {
+
+}
+
+.icon-sm {
+
+}
+
+.icon-lg {
+
+  &:before{
+    font-size: 20px;
+  }
+}
+
+
+// Static icons
+// --------------------------------------------------
+
+.post-meta-time,
+.icon-reply,
+.icon-time {
+  &:before {
+    font-family: 'Material Icons';
+    font-size: 20px;
+    font-style: normal;
+    color: $gray;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+}
+
+.post-meta-time,
+.icon-time{
+ &:before{
+   content: '\e192';
+   position: relative;
+   top: -1px;
+ }
+}
+
+.icon-reply:before{
+  content: '\e15e';
+}
+
+.icon-video {
+  position: relative;
+  &:after{
+    content: '\e037';
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    @include transform ( translate(-50%,-50%) );
+    background: $white;
+    font-family:'Material Icons';
+    font-size: 29px;
+    line-height: 49px;
+    text-align: center;
+    z-index: 99;
+    border-radius: 50%;
+  }
+}

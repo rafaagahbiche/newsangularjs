@@ -1,0 +1,8 @@
+<ul id="main-menu" class="rd-navbar-nav">
+  <li ng-class="{'active' : navigation.category === undefined}" class="rd-navbar--has-dropdown rd-navbar-submenu">
+    <a ng-href="{{navigation.path}}">Home</a>
+  </li>
+  <li ng-repeat="cat in navigation.Categories" ng-class="{'active' : navigation.IsCurrent(cat.Name)}"  class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2072">
+      <a class="capitalize" href="{{navigation.path}}/{{cat.Name}}">{{cat.Name}}</a>
+  </li>
+</ul>

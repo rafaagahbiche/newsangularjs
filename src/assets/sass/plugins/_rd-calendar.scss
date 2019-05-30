@@ -1,0 +1,169 @@
+/*
+* @subsection   RD Calendar
+*
+*
+* @author       Evgeniy Gusarov
+* @see          https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      1.0.0
+*/
+
+@import "../_variables.scss";
+
+.rd-calendar {
+
+  &.show-events {
+
+  }
+}
+
+
+// Today
+.rdc-today_day{
+
+}
+
+.rdc-today_date{
+
+}
+
+.rdc-today_month{
+
+}
+
+.rdc-today_fullyear{
+
+}
+
+
+// Panel
+.rdc-panel{
+  height: 50px;
+  @include display-flex();
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+// Controls
+.rdc-next, .rdc-prev, .rdc-events_close{
+  color: $gray;
+  font: 400 20px/20px "Material Icons";
+  cursor: pointer;
+  transition: .3s all ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.rdc-next{
+  padding-right: 5px;
+  &:before {
+    content: '\e5cc';
+  }
+}
+
+.rdc-prev{
+  padding-left: 5px;
+  &:before {
+    content: '\e5cb';
+  }
+}
+
+.rdc-events_close{
+
+}
+
+// Events
+.rdc-events{
+  opacity: 0;
+  visibility: hidden;
+  transition: .4s all ease-in-out;
+
+  .rd-calendar.show-events & {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+
+.rdc-event{
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+// Table
+.rdc-table{
+  position: relative;
+  width: 100%;
+
+  table {
+    border-spacing: 9px;
+    width: 100%;
+    border-collapse: separate;
+    table-layout: fixed;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  td {
+    position: relative;
+  }
+}
+
+.rdc-month{
+
+}
+
+.rdc-fullyear{
+
+}
+
+.rdc-table_day,
+.rdc-table_date{
+  font-family:'Noto Serif', Serif;
+  font-style: italic;
+  height: 50px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 2;
+  text-align: center;
+  background-color: #e8e8e8;
+}
+
+.rdc-table_day{
+  font-weight: 700;
+}
+
+.rdc-table_date{
+  padding-top: 12px;
+
+  &:hover{
+    background: $brand-warning;
+    color: $gray-base;
+  }
+}
+
+.rdc-table_today{
+  color: $brand-warning;
+  background-color: $gray-base;
+}
+
+.rdc-table_event{
+  cursor: pointer;
+  transition: .3s all ease;
+
+  &:hover{
+    color: $gray-base;
+    background-color: $brand-warning;
+  }
+}
+
+.rdc-table_next,
+.rdc-table_prev{
+  opacity: .5;
+}

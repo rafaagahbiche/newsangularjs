@@ -1,0 +1,87 @@
+//
+// Forms
+// --------------------------------------------------
+
+
+// Common form controls
+//
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: $padding-base-vertical $padding-base-horizontal;
+  font-family:'Noto Serif', Serif;
+  font-style: italic;
+  font-size: 14px;
+  line-height: (22/14);
+  color: $gray-base;
+  background-color: $input-bg;
+  border: 1px solid $input-border;
+  border-radius: $input-border-radius; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  box-shadow: none;
+  outline: none;
+
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+
+  // Placeholder
+  @include placeholder($gray-base);
+}
+
+
+// Form inline
+.form-inline-flex{
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .mfInput,
+  .form-group{
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+
+  button {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+
+  
+  @media (min-width: $screen-xs-min) {
+  	button{
+      margin-left: 8px;
+    }
+  }
+}

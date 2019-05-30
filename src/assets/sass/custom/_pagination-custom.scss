@@ -1,0 +1,91 @@
+//
+// Pagination (multiple pages)
+// --------------------------------------------------
+.pagination {
+  margin: 0;
+  border-radius: 0;
+
+  > li {
+    > a,
+    > span {
+      border: none;
+      height: 24px;
+      min-width: 24px;
+      vertical-align: middle;
+      padding: 0;
+      @include display-flex();
+      @include justify-content(center);
+      @include align-items(center);
+      font-family: 'Noto Serif', Serif;
+      font-size: 12px;
+      font-style: italic;
+      transition: 0.2s ease-in;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      > a,
+      > span {
+        height: 50px;
+        min-width: 50px;
+        font-size: 14px;
+        line-height: 49px;
+        vertical-align: middle;
+      }
+    }
+
+    > span{
+      pointer-events: none;
+    }
+
+    &.prev,
+    &.next {
+      > a,
+      > span {
+        width: auto;
+        font-family: 'Noto Sans', Serif;
+        font-weight: 700;
+        font-size: 16px;
+        font-style: normal;
+        padding: 0 13px;
+      }
+    }
+
+    &.prev {
+      > a,
+      > span {
+        &:before {
+          content: '\e5cb';
+          font-family: 'Material Icons';
+          font-weight: 400;
+          font-size: 20px;
+          color: $gray;
+          padding-right: 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+
+    &.next {
+      > a,
+      > span {
+        &:after {
+          content: '\e5cc';
+          font-family: 'Material Icons';
+          font-weight: 400;
+          font-size: 20px;
+          color: $gray;
+          padding-left: 6px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+
+  li + li {
+    >a,
+    >span {
+      margin-left: 10px;
+    }
+  }
+
+}

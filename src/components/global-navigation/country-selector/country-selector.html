@@ -1,0 +1,30 @@
+<div class="language-selector language-selector--mega-dropdown">
+    <div class="language-selector__toggle" ng-click="countrySelector.ShowCountriesList()">
+        <div class="language-selector__flag">
+            <img src="{{countrySelector.countryFlag}}">
+        </div>
+    </div>
+    <div class="language-selector__dropdown" ng-class="{'language-selector__dropdown--active' : countrySelector.ShowList}"> 
+        <div class="container">
+            <div class="module">
+                <div class="content-tabbed content-tabbed--alternate content-tabbed--no-transition">
+                    <div class="content-tabbed__wrapper content-tabbed__wrapper--active" style="height: 385px;">
+                        <div class="content-tabbed__main-content  content-tabbed__main-content--active"
+                            id="content-tabbed__main-content--0">
+                            <ul class="country-list">
+                                <li ng-repeat="country in countrySelector.Countries"  class="country-list__item">
+                                    <a class="country-list__link" 
+                                        ng-href="/news/{{country.Code}}" 
+                                        ng-click="countrySelector.ChangeCountry(country)">{{country.Name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- <button class="search-bar-button"></button>
+    <div class="search-bar">
+    </div> -->

@@ -1,0 +1,13 @@
+//
+// Sections
+// --------------------------------------------------
+
+// Section Spacing
+// -------------------------
+
+$insets: (15px, 26px, 30px, 50px, 80px, 110px, 125px);
+$medias: (0: null, $screen-xs-min : xs, $screen-sm-min : sm, $screen-md-min : md, $screen-lg-min : lg, $screen-xl-min : xl);
+
+@include indent-responsive(section, '', (padding-top, padding-bottom), $medias, $insets);
+@include indent-responsive(section, top, padding-top, $medias, $insets);
+@include indent-responsive(section, bottom, padding-bottom, $medias, $insets);
